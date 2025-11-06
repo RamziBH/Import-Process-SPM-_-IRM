@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>global.RBH_RiskAssessmentImport</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>RBH_RiskAssessmentImport</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var RBH_RiskAssessmentImport = Class.create();
+RBH_RiskAssessmentImport.prototype = {
+   initialize: function() {
+        this.riskMapping = {
+            "Tolérer": "Accept",
+            "Réduire": "Mitigate",
+            "Transférer": "Transfer",
+            "Éviter": "Avoid"
+        };
+
+        this.tabletaskmapping = {
+            "Tolérer": "sn_risk_acceptance_task",
+            "Réduire": "sn_risk_mitigation_task",
+            "Transférer": "sn_risk_transfer_task",
+            "Éviter": "sn_risk_avoidance_task"
+        };
+
+        this.controlMapping = {
+            "Contrôle PAS mis en œuvre et/ou inefficace": "1",
+            "Contrôle partiellement mis en œuvre et/ou partiellement efficace": "2",
+            "Contrôle en place et/ou efficace": "3"
+        };
+
+        this.factors = [{
+                key: "securite",
+                label: "Sécurité"
+            },
+            {
+                key: "finance",
+                label: "Finance"
+            },
+            {
+                key: "environnement",
+                label: "Environnement"
+            },
+            {
+                key: "lois_reg",
+                label: "Lois & règlements"
+            },
+            {
+                key: "reputation",
+                label: "Réputation"
+            },
+            {
+                key: "fiabilite",
+                label: "Fiabilité"
+            },
+            {
+                key: "gravite",
+                label: "Gravité"
+            },
+            {
+                key: "probabilite",
+                label: "Probabilité"
+            }
+        ];
+    },
+
+    runImport: function(attachmentSysId) {
+        var logs = [];
+        logs.push('---]]>🟢<![CDATA[ DÉBUT DU TRAITEMENT DES ÉVALUATIONS DE RISQUES---');
+        var parser = new sn_impex.GlideExcelParser();
+        var attachment = new GlideSysAttachment();
+        var errorCount = 0;
+        var errorLines = [];
+        var validRows = [];
+        var startTime = new GlideDateTime();
+
+        try {
+            var stream = attachment.getContentStream(attachmentSysId);
+            parser.parse(stream);
+            logs.push('✅ Fichier Excel analysé avec succès');
+        } catch (e) {
+            logs.push('❌ ERREUR CRITIQUE: Impossible de charger le fichier Excel - ' + e.message);
+            return logs;
+        }
+
+        var lineNumber = 1;
+        while (parser.next()) {
+            try {
+                var row = parser.getRow();
+                var prepared = this.prepareData(row);
+
+                if (!prepared.riskassessment || !prepared.entity) {
+                    throw new Error("Champs obligatoires manquants (RiskAssessment ou Entity)");
+                }
+
+                var risk = this.findRisk(prepared.riskassessment, prepared.entity);
+                if (!risk) {
+                    throw new Error("Risque introuvable");
+                }
+
+                var assessor = this.findAssessor(prepared.assessor);
+                if (!assessor) {
+                    throw new Error("Évaluateur introuvable");
+                }
+
+                var method = this.getMethodology();
+                if (!method) {
+                    throw new Error("Méthodologie introuvable");
+                }
+
+                var keycontrol = prepared.efficacite_controle ? prepared.efficacite_controle.trim() : "";
+                if (keycontrol && !this.controlMapping[keycontrol]) {
+                    throw new Error("Valeur de contrôle invalide");
+                }
+
+                var keyrisk = prepared.choix_tratmnt ? prepared.choix_tratmnt.trim() : "";
+                if (!keyrisk || !this.riskMapping[keyrisk]) {
+                    throw new Error("Valeur de traitement du risque invalide");
+                }
+
+                validRows.push(prepared);
+                logs.push('✅ Ligne ' + lineNumber + ' valide.');
+
+            } catch (e) {
+                errorCount++;
+                var errMsg = '❌ Ligne ' + lineNumber + ' - ' + e.message;
+                errorLines.push(errMsg);
+                logs.push(errMsg);
+            }
+            lineNumber++;
+        }
+
+        if (errorCount > 0) {
+            logs.push('==================== RAPPORT DE VALIDATION ====================');
+            logs.push('❌ Des erreurs ont été détectées dans le fichier. Aucune création ne sera effectuée.');
+            logs.push('Total lignes analysées : ' + (lineNumber - 1));
+            logs.push('Erreurs détectées : ' + errorCount);
+            logs = logs.concat(errorLines);
+            logs.push('---]]>🔴<![CDATA[ FIN DU TRAITEMENT (annulé à cause des erreurs) ---');
+            gs.log(logs.join('\n'), 'Energir_Riskassessmentinitial');
+            return logs;
+        }
+
+        logs.push('==================== AUCUNE ERREUR DÉTECTÉE ====================');
+        logs.push(']]>🟢<![CDATA[ DÉBUT DU TRAITEMENT DES INSERTIONS RÉELLES...');
+
+        var processedCount = 0;
+        this.disactiveactivatenotification(false);
+
+        for (var i = 0; i < validRows.length; i++) {
+            var prepared = validRows[i];
+            var rowNum = i + 1;
+            try {
+                var risk = this.findRisk(prepared.riskassessment, prepared.entity);
+                var assessor = this.findAssessor(prepared.assessor);
+                var method = this.getMethodology();
+
+                this.notificationuser(assessor.sys_id, 1);
+                this.notificationuser(risk.respondents, 1);
+
+                var assessmentId = this.triggerRiskAssessment(risk.sys_id, method.sys_id, assessor.sys_id, "");
+                gs.sleep(2000);
+
+                var riskassmnt = this.startInherentAssessment(risk.sys_id);
+                this.assessmentResponse(riskassmnt.sys_id, "1", "Raison pour la (ré)évaluation du risque",
+                    this.getScoreRaison("Raison pour la (ré)évaluation du risque", prepared.raison));
+
+                this.factors.forEach(function(factor) {
+                    var vAss = prepared[factor.key + '_ass'];
+                    if (vAss) this.assessmentResponse(riskassmnt.sys_id, "1", factor.label, vAss);
+                    var vTarget = prepared[factor.key + '_target'];
+                    if (vTarget) this.assessmentResponse(riskassmnt.sys_id, "4", factor.label, vTarget);
+                }, this);
+
+                var existcontrol = this.checkRiskToControl(risk.sys_id);
+                if (!existcontrol) {
+                    this.controlResponseNotApp(riskassmnt.sys_id);
+                } else {
+                    var mappedControlValue = this.controlMapping[prepared.efficacite_controle.trim()];
+                    this.assessmentResponse(riskassmnt.sys_id, "2", "Efficacité du contrôle", mappedControlValue);
+                }
+
+                var mappedRiskValue = this.riskMapping[prepared.choix_tratmnt.trim()];
+                this.getRiskResponseAction(riskassmnt.sys_id, mappedRiskValue, prepared.date);
+
+                this.createtaskassessment(
+                    this.tabletaskmapping[prepared.choix_tratmnt.trim()],
+                    mappedRiskValue,
+                    prepared.controle_mis_oeuvre,
+                    risk.respondents,
+                    risk.sys_id
+                );
+
+                gs.sleep(2000);
+                this.automaticApprovalAssessment(riskassmnt.sys_id);
+                this.approvedon_enddate(riskassmnt.sys_id, prepared.date_approbation, prepared.date);
+                processedCount++;
+                logs.push('✅ Ligne ' + rowNum + ' traitée avec succès.');
+            } catch (ex) {
+                logs.push('⚠️ Ligne ' + rowNum + ' - Erreur inattendue pendant le traitement réel : ' + ex.message);
+            }
+        }
+
+        this.disactiveactivatenotification(true);
+
+        var endTime = new GlideDateTime();
+        var duration = GlideDateTime.subtract(startTime, endTime);
+
+        logs.push('==================== RAPPORT FINAL ====================');
+        logs.push(']]>🟢<![CDATA[ Total lignes traitées : ' + processedCount);
+        logs.push('Durée totale : ' + duration.getDisplayValue());
+        logs.push('---✅ FIN DU TRAITEMENT DES ÉVALUATIONS DE RISQUES---');
+
+        gs.log(logs.join('\n'), 'Energir_Riskassessmentinitial');
+        return logs;
+    },
+
+    prepareData: function(row) {
+        var myData = {};
+        var baseKeys = [
+            ['entity', 'Entité'],
+            ['riskassessment', 'Énoncé de risque'],
+            ['assessor', 'Responsable'],
+            ['date', 'Date'],
+            ['raison', 'Raison de la mise à jour'],
+            ['controle_mis_oeuvre', 'Contrôles à mettre en œuvre'],
+            ['efficacite_controle', 'Efficacité des contrôles'],
+            ['choix_tratmnt', 'Choix du Traitement'],
+            ['controle_ass', 'Contrôles'],
+            ['date_echeance', "Date d'échéance"],
+            ['date_approbation', "Date d'approbation"]
+        ];
+        baseKeys.forEach(function(p) {
+            myData[p[0]] = row[p[1]];
+        });
+
+        var assess_keys = ['Sécurité', 'Finance', 'Environnement', 'Réputation', 'Fiabilité', 'Gravité', 'Probabilité'];
+        assess_keys.forEach(function(key) {
+            var prop = key.toLowerCase().replace(/é/g, 'e').replace(' ', '_');
+            myData[prop + '_ass'] = row[key] || '';
+            myData[prop + '_target'] = row[key + 'T'] || '';
+        });
+
+        myData['lois_reg_ass'] = row['Lois & règlements'] || '';
+        myData['lois_reg_target'] = row['Lois & règlementsT'] || '';
+        return myData;
+    },
+
+    findRisk: function(name, entity) {
+        var gr = new GlideRecord("sn_risk_risk");
+        gr.addEncodedQuery("profile.nameLIKE" + entity + "^nameLIKE" + name);
+        gr.query();
+        return gr.next() ? gr : null;
+    },
+
+    findAssessor: function(name) {
+        var gr = new GlideRecord("sys_user");
+        gr.addEncodedQuery("nameLIKE" + name);
+        gr.query();
+        return gr.next() ? gr : null;
+    },
+
+    triggerRiskAssessment: function(risk, ramid, assessor, approver) {
+        try {
+            var result = new sn_risk_advanced.RiskAssessmentUtils().triggerRiskAssessment(risk, ramid, assessor, approver, "User", "User", 5);
+            return JSON.stringify(result.asmtId);
+        } catch (e) {
+            gs.error(e.message);
+            return null;
+        }
+    },
+
+    getMethodology: function() {
+        var ram = new GlideRecord("sn_risk_advanced_risk_assessment_methodology");
+        ram.addEncodedQuery("state=2^assessed_on=0^nameLIKEsgsop");
+        ram.query();
+        return ram.next() ? ram : null;
+    },
+
+    startInherentAssessment: function(risk) {
+        var gr = new GlideRecord("sn_risk_advanced_risk_assessment_instance");
+        gr.addEncodedQuery("risk=" + risk + "^state=1");
+        gr.query();
+        if (gr.next()) {
+            gr.state = "2";
+            gr.update();
+            return gr;
+        }
+        return null;
+    },
+
+    getScoreRaison: function(factor, displayvalue) {
+        var gr = new GlideRecord("sn_risk_advanced_factor_choice");
+        gr.addEncodedQuery("factor.nameSTARTSWITH" + factor + "^display_valueSTARTSWITH" + displayvalue);
+        gr.query();
+        return gr.next() ? gr.score : null;
+    },
+
+    getRiskResponseAction: function(riskassessment, riskresponse, approveddate) {
+        var gr = new GlideRecord("sn_risk_advanced_risk_assessment_instance");
+        if (gr.get(riskassessment)) {
+            gr.setValue('risk_response', riskresponse);
+            gr.setValue('state', '6');
+            gr.setValue('approved_on', approveddate);
+            gr.update();
+        }
+    },
+
+    assessmentResponse: function(riskassessment, assessmenttype, factor, factorresponse) {
+        if (!factorresponse) return;
+        var gr = new GlideRecord("sn_risk_advanced_risk_assessment_instance_response");
+        gr.addEncodedQuery("assessment_instance_id=" + riskassessment + "^assessment_type=" + assessmenttype + "^factor.nameLIKE" + factor);
+        gr.query();
+        while (gr.next()) {
+            gr.factor_response = factorresponse;
+            gr.update();
+        }
+    },
+
+    checkRiskToControl: function(risk) {
+        var gr = new GlideRecord("sn_risk_m2m_risk_control");
+        gr.addQuery("sn_risk_risk", risk);
+        gr.query();
+        return gr.hasNext();
+    },
+
+    controlResponseNotApp: function(riskassessment) {
+        var gr = new GlideRecord("sn_risk_advanced_risk_assessment_instance");
+        if (gr.get(riskassessment)) {
+            gr.setValue('mitigating_controls_to_assess', true);
+            gr.update();
+        }
+    },
+
+    createtaskassessment: function(table, shortdescr, plan, responsable, risk) {
+        var gr = new GlideRecord(table);
+        gr.initialize();
+        gr.short_description = shortdescr;
+        gr.plan = plan;
+        gr.assigned_to = responsable;
+        gr.risk = risk;
+        gr.setWorkflow(false);
+        return gr.insert();
+    },
+
+    sendignoreemail: function(target, table) {
+        var email = new GlideRecord('sys_email');
+        email.addQuery('target_table', table);
+        email.addQuery('instance', target);
+        email.query();
+        if (email.next()) {
+            email.type = "send-ignored";
+            email.update();
+        }
+    },
+
+    approvalrecord: function(riskassmnt) {
+        var gr = new GlideRecord('sysapproval_approver');
+        gr.addQuery('document_id', riskassmnt);
+        gr.query();
+        return gr.next() ? gr : null;
+    },
+
+    notificationuser: function(userSysId, score) {
+        var gr = new GlideRecord("sys_user");
+        if (gr.get(userSysId)) {
+            gr.notification = score;
+            gr.update();
+            gs.debug('✅ Statut des notifications mis à jour pour utilisateur ' + userSysId);
+        } else {
+            gs.error('❌ Impossible de mettre à jour le statut des notifications pour utilisateur : ' + userSysId);
+        }
+    },
+
+    disactiveactivatenotification: function(state) {
+        var gr = new GlideRecord('sysevent_email_action');
+        gr.addEncodedQuery("name=NR - Notify Approver to Risk Assessment^ORsys_id=1567756ad7600300bbc783e80e6103d9");
+        gr.query();
+        while (gr.next()) {
+            gr.active = state;
+            gr.update();
+        }
+    },
+
+    automaticApprovalAssessment: function(riskassmnt) {
+        var hasPending = true;
+
+        while (hasPending) {
+            var gr = new GlideRecord('sysapproval_approver');
+            gr.addQuery('document_id', riskassmnt);
+            gr.addQuery('state', '!=', 'approved');
+            gr.query();
+
+            if (gr.next()) {
+                gr.state = 'approved';
+                gr.update();
+                gs.info('Approbation automatique effectuée pour le niveau ');
+
+                var waitTime = 0;
+                var maxWait = 10000;
+                while (true) {
+                    var nextLevel = new GlideRecord('sysapproval_approver');
+                    nextLevel.addQuery('document_id', riskassmnt);
+                    nextLevel.addQuery('state', '!=', 'approved');
+                    nextLevel.query();
+                    gs.sleep(1000);
+                    waitTime += 1000;
+                    if (waitTime >= maxWait) {
+                        gs.info('Aucun nouveau niveau créé après 10 secondes.');
+                        break;
+                    }
+                }
+
+            } else {
+                hasPending = false;
+            }
+        }
+    },
+
+    approvedon_enddate: function(riskassessment, approvedon, enddate) {
+        var gr = new GlideRecord("sn_risk_advanced_risk_assessment_instance");
+        if (gr.get(riskassessment)) {
+            gr.setValue('approved_on', approvedon);
+            gr.setValue('asmt_end_date', enddate);
+            gr.update();
+        }
+    },
+
+    type: 'RBH_RiskAssessmentImport'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:27:06</sys_created_on>
+        <sys_id>993ccc3dc3413210b0541c65e4013168</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>RBH_RiskAssessmentImport</sys_name>
+        <sys_package display_value="Import process" source="73c680bdc3013210b0541c65e4013136">73c680bdc3013210b0541c65e4013136</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_update_name>sys_script_include_993ccc3dc3413210b0541c65e4013168</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:27:06</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>993ccc3dc3413210b0541c65e4013168</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:27:06</sys_created_on>
+        <sys_id>005c807dc3413210b0541c65e4013187</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:27:06</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
