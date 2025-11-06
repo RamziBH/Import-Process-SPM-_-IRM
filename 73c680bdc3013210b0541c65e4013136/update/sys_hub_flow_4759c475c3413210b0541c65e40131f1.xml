@@ -1,0 +1,1461 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=687681000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>28100</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build>glide-washingtondc-12-20-2023__patch4-hotfix1a-07-01-2024_07-12-2024_0853.zip</compiler_build>
+        <copied_from>32847ecc9348de109cb7b91c5cba10e2</copied_from>
+        <copied_from_name>Data Automation  -  Import Expen</copied_from_name>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>data_automation____import_expense_line_spms</internal_name>
+        <label_cache>[{"name":"Service Catalog_1.request_item.requested_for.first_name","label":"Trigger - Service Catalog➛Requested Item Record➛Requested for➛First name","reference":"","reference_display":"First name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"first_name","usedInstances":{"69cc4764-d64d-4c60-b0da-4e60e8e58ded":[null]}},{"name":"Service Catalog_1.request_item","label":"Trigger - Service Catalog➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item","type":"reference","base_type":"reference","usedInstances":{"3f9ce309-afbd-4256-94a0-701b9e6daf99":["record"],"77e3bea4-f6f9-4634-955f-cdc188e8968e":["requested_item"],"48468ac2-27ef-4b56-aced-e0c563b1b9c7":["record"],"69cc4764-d64d-4c60-b0da-4e60e8e58ded":["record"],"e054cdcd-8c68-4b41-97cd-3aae7eff3b75":["record"],"1f631a74-5f77-4235-a2b7-439c973dcdb5":["record"],"26e9a6a2-2434-42de-8321-f443a1446f7b":["record"],"08544dee-4447-4245-a7da-44c7b81f663c":["record"],"c361d263-956d-4b3b-a774-b03405bd50d7":["record"],"57210575-e42d-42aa-b60a-dc1fa609cd80":["record"]},"attributes":{"default_search_field":"number"}},{"name":"Service Catalog_1.request_item.sys_id","label":"Trigger - Service Catalog➛Requested Item Record➛Sys ID","reference":"","reference_display":"Sys ID","type":"GUID","base_type":"GUID","parent_table_name":"sc_req_item","column_name":"sys_id","usedInstances":{"4a517c22-29c2-46f0-a646-3dd627b4e725":["conditions"]}},{"name":"4a517c22-29c2-46f0-a646-3dd627b4e725.Record","label":"3 - Look Up Record➛Attachment Record","reference":"sys_attachment","reference_display":"Attachment","type":"reference","base_type":"reference","usedInstances":{"749be53a-f63e-4847-8833-4cae03a82e54":["attachment_record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"a8b77a43-b113-40a9-ae10-7f17024e8ac4.Record","label":"4 - Look Up Record➛Data Source Record","reference":"sys_data_source","reference_display":"Data Source","type":"reference","base_type":"reference","usedInstances":{"749be53a-f63e-4847-8833-4cae03a82e54":["target_record"],"c4cc18fa-372f-4509-8e80-76290b1bd00d":["source_record"],"2b66a98a-9843-4828-bb6c-49c4f29b0f32":["data_source_record"],"3a9afbb3-f00b-4831-bbe9-82353afcea7b":["record"],"f4f78cc5-a6ae-46a5-9e89-c93776d2d2c9":["record"],"a681bf79-dc7e-47ce-8b1c-ba133e554fbf":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"c4cc18fa-372f-4509-8e80-76290b1bd00d.parameter","label":"6 - Look Up Attachment➛Attachment Sys ID","reference_display":"Attachment Sys ID","type":"string","base_type":"string","usedInstances":{"745d8e37-cc98-4618-806f-fb33a9a82822":["record"],"e037699c-924f-49d1-940d-2030b12eed7f":["record"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"b143af44-a3d5-4f5f-9429-760e819835ec"}},{"name":"Service Catalog_1.request_item.number","label":"Trigger - Service Catalog➛Requested Item Record➛Number","reference":"","reference_display":"Number","type":"string","base_type":"string","parent_table_name":"sc_req_item","column_name":"number","usedInstances":{"745d8e37-cc98-4618-806f-fb33a9a82822":["file_name"],"e037699c-924f-49d1-940d-2030b12eed7f":["values"]}},{"name":"Service Catalog_1.request_item.sys_created_on","label":"Trigger - Service Catalog➛Requested Item Record➛Created","reference":"","reference_display":"Created","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"sc_req_item","column_name":"sys_created_on","usedInstances":{"745d8e37-cc98-4618-806f-fb33a9a82822":["file_name"],"e037699c-924f-49d1-940d-2030b12eed7f":["values"]}},{"name":"2b66a98a-9843-4828-bb6c-49c4f29b0f32.importsetsysid","label":"9 - Load Data Source Into Import Set➛ImportSetSysID","reference_display":"ImportSetSysID","type":"string","base_type":"string","usedInstances":{"50b930cf-f413-41ca-88e6-ecb93da209b0":["import_set_sysid"],"60e53a5a-a64d-4468-95ea-972b860f9e3f":["sysid_for_importset_to_run"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"37ef4afb-ea8c-4d88-b477-e2c02da4dda8"}},{"name":"77e3bea4-f6f9-4634-955f-cdc188e8968e.var_row_count","label":"8 - Get Catalog Variables➛var_row_count","reference":"","reference_display":"var_row_count","type":"string","base_type":"string","usedInstances":{"50b930cf-f413-41ca-88e6-ecb93da209b0":["filecount"],"69cc4764-d64d-4c60-b0da-4e60e8e58ded":[null],"9dcd44a9-3da6-4a86-8393-5945bade5e04":["notifbpi-0"]},"attributes":{"catalogType":"6","catalogTypeLabel":"Single Line Text"}},{"name":"77e3bea4-f6f9-4634-955f-cdc188e8968e.var_row_sum","label":"8 - Get Catalog Variables➛var_row_sum","reference":"","reference_display":"var_row_sum","type":"string","base_type":"string","usedInstances":{"50b930cf-f413-41ca-88e6-ecb93da209b0":["filesum"],"69cc4764-d64d-4c60-b0da-4e60e8e58ded":[null],"9dcd44a9-3da6-4a86-8393-5945bade5e04":["notifbpi-0"]},"attributes":{"catalogType":"6","catalogTypeLabel":"Single Line Text"}},{"name":"50b930cf-f413-41ca-88e6-ecb93da209b0.errorstate","label":"10 - Error verification for the expense line➛Error state","reference_display":"Error state","type":"boolean","base_type":"boolean","usedInstances":{"8d2e3515-779f-4ff8-8d02-474982800153":["condition"]},"attributes":{"uiType":"boolean","uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"c50a2f1b-12de-4213-9b63-a68ff1d7282f"}},{"name":"Service Catalog_1.request_item.requested_for","label":"Trigger - Service Catalog➛Requested Item Record➛Requested for","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sc_req_item","column_name":"requested_for","usedInstances":{"69cc4764-d64d-4c60-b0da-4e60e8e58ded":["ah_to"]}},{"name":"Service Catalog_1.request_item.cat_item.group","label":"Trigger - Service Catalog➛Requested Item Record➛Item➛Fulfillment group","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference","parent_table_name":"sc_cat_item","column_name":"group","usedInstances":{"69cc4764-d64d-4c60-b0da-4e60e8e58ded":["ah_cc"]}},{"name":"4a517c22-29c2-46f0-a646-3dd627b4e725.Record.file_name","label":"3 - Look Up Record➛Attachment Record➛File name","reference":"","reference_display":"File name","type":"string","base_type":"string","parent_table_name":"sys_attachment","column_name":"file_name","usedInstances":{"69cc4764-d64d-4c60-b0da-4e60e8e58ded":[null],"9dcd44a9-3da6-4a86-8393-5945bade5e04":["notifbpi-0"],"50b930cf-f413-41ca-88e6-ecb93da209b0":["filename"]}},{"name":"50b930cf-f413-41ca-88e6-ecb93da209b0.file_count","label":"10 - Error verification for the expense line➛File Count","reference_display":"File Count","type":"integer","base_type":"integer","usedInstances":{"69cc4764-d64d-4c60-b0da-4e60e8e58ded":[null]},"attributes":{"uiType":"integer","uiTypeLabel":"Integer","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"c43a825c-9412-4c0b-b559-60ab05dd16a6"}},{"name":"50b930cf-f413-41ca-88e6-ecb93da209b0.expense_sum","label":"10 - Error verification for the expense line➛Expense Sum","reference_display":"Expense Sum","type":"decimal","base_type":"decimal","usedInstances":{"69cc4764-d64d-4c60-b0da-4e60e8e58ded":[null]},"attributes":{"uiType":"decimal","uiTypeLabel":"Decimal","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"edf710dc-7ebd-4446-9c7a-cd93099b9ffb"}},{"name":"50b930cf-f413-41ca-88e6-ecb93da209b0.errormsg","label":"10 - Error verification for the expense line➛Error Msg","reference_display":"Error Msg","type":"string","base_type":"string","usedInstances":{"1f631a74-5f77-4235-a2b7-439c973dcdb5":["comments","work_notes"],"c14915da-03ae-428b-aaa5-f4d4148a6905":["message_d_erreur-0"],"c361d263-956d-4b3b-a774-b03405bd50d7":["comments"],"8d2e3515-779f-4ff8-8d02-474982800153":["condition"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"48d4ec6e-0138-4bf2-a530-f769245e1484"}},{"name":"flow_variable.message_d_erreur","label":"Flow Variables➛Message d\u0027erreur","type":"string","base_type":"string","usedInstances":{"1f631a74-5f77-4235-a2b7-439c973dcdb5":["comments","work_notes"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"bf75f153-9b3d-4454-89a3-40a4502a50c4"}},{"name":"77e3bea4-f6f9-4634-955f-cdc188e8968e.data_type","label":"8 - Get Catalog Variables➛data_type","reference":"","reference_display":"data_type","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":100.0},{"label":"BPI","value":"bpi","order":100.0},{"label":"Projets majeurs","value":"projets_majeurs","order":100.0}],"usedInstances":{"d93d2657-4939-4838-918d-15ac5c8fcaf2":["condition"]},"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"flow_variable.notifbpi","label":"Flow Variables➛Notification BPI","type":"string","base_type":"string","usedInstances":{"b672f180-475f-48c3-b640-623819e691b4":["parm1"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"1c96a599-b709-447f-8914-0224553a8f16"}},{"name":"Service Catalog_1.request_item.sys_created_by","label":"Trigger - Service Catalog➛Requested Item Record➛Created by","reference":"","reference_display":"Created by","type":"string","base_type":"string","parent_table_name":"sc_req_item","column_name":"sys_created_by","usedInstances":{"b672f180-475f-48c3-b640-623819e691b4":["parm2"]}}]</label_cache>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <master_snapshot_digest/>
+        <name>Data Automation  -  Import Expense Line (SPM))s</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4759c475c3413210b0541c65e40131f1</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Data Automation  -  Import Expense Line (SPM))s</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Import process" source="73c680bdc3013210b0541c65e4013136">73c680bdc3013210b0541c65e4013136</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_update_name>sys_hub_flow_4759c475c3413210b0541c65e40131f1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:14</sys_updated_on>
+        <type>flow</type>
+        <updation_source/>
+        <version>2</version>
+        <version_record display_value="Created 2025-11-06 13:14:16">94698875c3413210b0541c65e4013136</version_record>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=4759c475c3413210b0541c65e40131f1"/>
+    <sys_variable_value action="delete_multiple" query="document_key=4759c475c3413210b0541c65e40131f1"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=4759c475c3413210b0541c65e40131f1^sys_idNOT IN23590875c3413210b0541c65e40131d1,67590875c3413210b0541c65e40131d0,a7590875c3413210b0541c65e40131d1,e3590875c3413210b0541c65e40131d1"/>
+    <sys_hub_flow_stage action="INSERT_OR_UPDATE">
+        <always_show>true</always_show>
+        <ancestor_array_position>0</ancestor_array_position>
+        <ancestor_component_id/>
+        <ancestor_stage_id/>
+        <ancestral_if_else_logic/>
+        <component_indexes>11</component_indexes>
+        <duration>1970-01-01 00:00:00</duration>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <label>Exécution</label>
+        <order>2</order>
+        <stage_id>6578ab81-5fb0-4ba4-8bf8-44d0906e9474</stage_id>
+        <states>{"pending":"Pending - has not started","in_progress":"In progress","skipped":"Skipped","complete":"Completed","error":"Error"}</states>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:14</sys_created_on>
+        <sys_id>23590875c3413210b0541c65e40131d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:14</sys_updated_on>
+        <type>standard</type>
+        <value>fulfillment</value>
+    </sys_hub_flow_stage>
+    <sys_hub_flow_stage action="INSERT_OR_UPDATE">
+        <always_show>true</always_show>
+        <ancestor_array_position>0</ancestor_array_position>
+        <ancestor_component_id/>
+        <ancestor_stage_id/>
+        <ancestral_if_else_logic/>
+        <component_indexes>23</component_indexes>
+        <duration>1970-01-01 00:00:00</duration>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <label>Demande annulée</label>
+        <order>1</order>
+        <stage_id>9130355a-549f-4ee4-aadc-5037399461f5</stage_id>
+        <states>{"pending":"Pending - has not started","in_progress":"In progress","skipped":"Skipped","complete":"Completed","error":"Error"}</states>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:14</sys_created_on>
+        <sys_id>67590875c3413210b0541c65e40131d0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:14</sys_updated_on>
+        <type>standard</type>
+        <value>Request Cancelled</value>
+    </sys_hub_flow_stage>
+    <sys_hub_flow_stage action="INSERT_OR_UPDATE">
+        <always_show>true</always_show>
+        <ancestor_array_position>0</ancestor_array_position>
+        <ancestor_component_id/>
+        <ancestor_stage_id/>
+        <ancestral_if_else_logic/>
+        <component_indexes>0</component_indexes>
+        <duration>1970-01-02 00:00:00</duration>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <label>Validation en cours</label>
+        <order>0</order>
+        <stage_id>b2c82952-e4b2-492c-ba3d-98155484065a</stage_id>
+        <states>{"pending":"Pending - has not started","in_progress":"In progress","skipped":"Skipped","complete":"Completed","error":"Error"}</states>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:14</sys_created_on>
+        <sys_id>a7590875c3413210b0541c65e40131d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:14</sys_updated_on>
+        <type>standard</type>
+        <value>waiting_for_approval</value>
+    </sys_hub_flow_stage>
+    <sys_hub_flow_stage action="INSERT_OR_UPDATE">
+        <always_show>true</always_show>
+        <ancestor_array_position>0</ancestor_array_position>
+        <ancestor_component_id/>
+        <ancestor_stage_id/>
+        <ancestral_if_else_logic/>
+        <component_indexes>12</component_indexes>
+        <duration>1970-01-01 00:00:00</duration>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <label>Terminé</label>
+        <order>3</order>
+        <stage_id>fc762180-cf9d-4434-b30b-24aae171ccda</stage_id>
+        <states>{"pending":"Pending - has not started","in_progress":"In progress","skipped":"Skipped","complete":"Completed","error":"Error"}</states>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:14</sys_created_on>
+        <sys_id>e3590875c3413210b0541c65e40131d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:14</sys_updated_on>
+        <type>standard</type>
+        <value>complete</value>
+    </sys_hub_flow_stage>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=4759c475c3413210b0541c65e40131f1^sys_idNOT IN0f59c475c3413210b0541c65e40131f2"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>4759c475c3413210b0541c65e40131f1</id>
+        <name>Data Automation  -  Import Expense Line (SPM))s</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:12</sys_created_on>
+        <sys_id>0f59c475c3413210b0541c65e40131f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:12</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=0f59c475c3413210b0541c65e40131f2"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=4759c475c3413210b0541c65e40131f1^sys_idNOT IN1b590875c3413210b0541c65e401314e,57590875c3413210b0541c65e4013148"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>sc_req_item</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</model>
+        <model_id>4759c475c3413210b0541c65e40131f1</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_4759c475c3413210b0541c65e40131f1</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>true</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:12</sys_created_on>
+        <sys_id>1b590875c3413210b0541c65e401314e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:12</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=1b590875c3413210b0541c65e401314e"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>default_search_field=number,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>request_item</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Request Item</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</model>
+        <model_id>4759c475c3413210b0541c65e40131f1</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_4759c475c3413210b0541c65e40131f1</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="sc_req_item">sc_req_item</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:12</sys_created_on>
+        <sys_id>57590875c3413210b0541c65e4013148</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:12</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=57590875c3413210b0541c65e4013148"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=4759c475c3413210b0541c65e40131f1"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=4759c475c3413210b0541c65e40131f1"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=4759c475c3413210b0541c65e40131f1^sys_idNOT INe7590875c3413210b0541c65e40131a1"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <generation_source/>
+        <name>Service Catalog</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>e7590875c3413210b0541c65e40131a1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <trigger_definition display_value="Service Catalog">c43a1011c36813002841b63b12d3ae15</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/81V32/aMBD+VyI/bRJIDhRCeJuYKiGxdirdXlAVOc4FrDp2Zju0DPV/35kk/OiyqtJe+hafj7vv++47s9oTZ8R6DWaurGOKw3Jn5xmZEhheTaIx5fFwMskgpDFPozQO+YinLKQsJT0iWQoSU+8qFVxL/RTMFUaFcmAUk/e7EvCSb7TggPH6YyGsI9PVnuQ/max8Al7li6ZSvx/caAVBv++j84Kt24wlSOAOEFnOpAWM/LDnp2/CWqHWTeCld9YgZfxxbXSlsvNWHnTuQQsVnDKCTxnkrJLu82sA35lhBSA1S6Z7ovAbL+zOJr5IYoBrkyWNlpifQQkqA+WSrYeBP1oR8vDyf0xybeBtJpcZHwH/Q48UTGXMabM7JRld3ENRSubgGEQA2HoaUtpr8ZlK1fiEd9a2a6CZsFhm10r0jrGWrRJeiNatC6Eea6X4RsjMgELGiF34XRjTmPJoEEfRgA6HlOajNOc559EkpONwFP9zFzppuFeL4c/tLGdt8FwMeHZ+FieN/xbUAMtulTwFNkis5lOwZyt+Y8cr6vNyQG68ccXxmDQyNmb5yhxbOlNxVxloZfHI7GF35ft3qHNmLTlv7q5aFy7edpm/qTDw9mq6zT4swFq629IJja4iQz9zlsq3F5BrWRXqpstADfqzB7SyOMF2Y09bttzop7t2xNdCHSA1l1JzJo8n5rBzWjk4vA4s2/q/Am99NAEQXHsEOpPM2gZQ7Z3kV+VrkIv34sDx8BNuROm+cCe2cHwN/gBbxkARcQYAAA==</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>service_catalog</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=4759c475c3413210b0541c65e40131f1^sys_idNOT IN23590875c3413210b0541c65e4013197,2b590875c3413210b0541c65e401319a,2b590875c3413210b0541c65e401319d,63590875c3413210b0541c65e4013188,67590875c3413210b0541c65e4013192,6b590875c3413210b0541c65e401319e,6f590875c3413210b0541c65e401318c,a3590875c3413210b0541c65e4013189,a3590875c3413210b0541c65e401318b,a3590875c3413210b0541c65e4013194,a7590875c3413210b0541c65e4013184,a7590875c3413210b0541c65e4013190,ab590875c3413210b0541c65e401319f,af590875c3413210b0541c65e401318d,e7590875c3413210b0541c65e401319c,eb590875c3413210b0541c65e4013198,ef590875c3413210b0541c65e4013195"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <generation_source/>
+        <order>13</order>
+        <parent_ui_id>8d2e3515-779f-4ff8-8d02-474982800153</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>23590875c3413210b0541c65e4013197</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>48468ac2-27ef-4b56-aced-e0c563b1b9c7</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VW2/bNhT+KwQfM0+RrDix3acgWbAAXQPEQ17qTqCoI5sDRakk5cY1/N93eJHrNV36kO4h2PLi8OO5fOfyie93lHErWnWrjGWKw2Jrbis6p9OzybQ8T/ksn04ryNIZLy/KWcYnvGRZOpnRERXOTgNvdYUnxRo4Pm+Y7B2w2y1AbwQHcsUsk+2qyBINH3swthAWmv0ejSthOsm2D9EHkY5pDGhB0/mO8rWQlQZF5+8/xLxnUKXZLDvneZbn4zQdT8+y8jwvs3GVM4AMQ0hWgkTT+3+iaLedO1ct7xtQSGcA30bP63hDbq/xBp0cnSwdUXi0oCpAIjWTBka0YapittVbOre6R0ADq+6U3B4s1kLZUFrDHo34jJnPUmdXA1bGY9mHYxFbEuD6Gnu3wMjc9jqa8nWLXTWhJxXUrJf26hgLBnedG29wsayUg3cr+0a9Cx2hhwBHE+gNkoDO1emYh7Lqxbr9dD+QvBHKtySWKFvO5OHErNWi7K2js6Mgwfe4YV0n1KrodLsR3hmpNMlK4iGpZfsJcxqxUklYywS7ypIbxK89/MC0cEX8hmHQeT+iZmuuJDPmSynYw+Jj75iEwmIJhe+Cb0HhN8E5cy06e4mpNhCJ70cvlcRRisPO/Q0bpGF4gUrwKniqgfugEajIbbj/niLKyXOK4LMjRfzu9+Db5KIonmBvj33Ju3ARJTH5YZKYviZJxDJevSb+NSX4RTdfFu1wHhSAjLFmJpd9muZVOEH1B2ZbQcDq6udALcA2wvlTwbwo1vfElY6ffW7gSFw3AmT1raIHZUGDtC0UoQlfqStekod4eXh0fpjEsvPU/70iof0H3p5QYsAcZ7+2/p9nzOjpyVKdnFxy7LshjunppadOHHXSG6yW2DWQuio80pZ/ArcJWfgApOmNJRpwroow4vcxIS7inds6ovqmxB9hSFvXBiwpt+SnjAhFftG61eRXXD/pUiwgNMyT2TAh/RvR+ukbEreJ9B0S6zRSdT5LmiwpYTVqbqDn3OGRoQJgjmw0MetWW2w+J0Gpg2GC012tQCe817gMNvGGbnq+Lsz6xsWKlR2iOPB0qSLsQo4vcAEwXfgUjC/IG5yaYfjdGJYRt62BIlr5sbkPx9PBxMX7fzIvmczXzc/pfr//8BdJnQeQpAwAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=23590875c3413210b0541c65e4013197"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Delete Attachment">bdc2a0170f973300dfd3694e68767e47</action_type>
+        <action_type_parent display_value="Delete Attachment">6672502a9353130079b5925cf67ffbc6</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>bdc2a0170f973300dfd3694e68767e47</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <generation_source/>
+        <order>17</order>
+        <parent_ui_id>8d2e3515-779f-4ff8-8d02-474982800153</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>2b590875c3413210b0541c65e401319a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>f4f78cc5-a6ae-46a5-9e89-c93776d2d2c9</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+WW32/aMBDH/xWUZ2AJCYTwMlVFSEhbK5VqL1UVXRwHLDlOlji0DPG/75w4CZQf67RWqzbx5Dvf+e57/sQ8bA0gkiViLnIJgtDFJp+HxsQYBE7gjhzTs8k4pJbpkcANPIsMSQCW6YZG12BqX0ZJkqmVgJjur9fAC2XYbmEcuC44di+wLLvnmOD1ADP23MhyzYFDx0Cc/l0Zt9thZMjylMPmm06AlhQyzC5pZky2BlkxHmZUGJOHR12EG5IBmJgt8lzbNs0wCu2R59DR2B251BljCg4B5bh1kRQZoZ27c2XLTarWYUKKmArps9r4RSeYak9nPkUPBqmqrK5BnyUVIcVyIuA57RoxiBBkkm2MicwKNGQUwlvBN82OFROyajCG55z9wIPtgdoXUeyPqDqYICzE04w9s68FQve8dUdTkLDAk4gsMq0bWSWM0LxSKqQRFFxe79uqDbepugFViISA19EJL2JxUwlkNAnqudDIsckoxHniLxi6pklcN/KCyB67EFG7jZgeDbTIsQuaKsGUBJU+0WKVPN3VXc6YKKXVWvGEAG9W0YJCRlYzRrmavyjiAPd2DZAyY0EhVX9bo2D3p6ZZmU/Pk3JabowhTZlY+mmWrFlZB8oR95ccF/2IJ09Yfs6Wol/R08dJQ3+G9mlp/gYZU0J+xTQYvOsa+Sa/5pDnrZw4T/97oZqqxNVq+OUkqjGoOJKxVF7hKWuq2991/xTaKntz+etljSzW6quG/LyE5RhJddU6i9r5Szq9S3QOzT06708XpqEsl37pO2SyDOvcVA6N5OCtkBybh0ieQfFvIHhMUsPHq1E6g8yB1ofEHKjNcr+6orroMusHAundGELdgKzKHiPWSqVv7hnvuh3c779ywfAiR8M9jq6a4zsz1g7rcnGashzvg1i+IGxRGzVd9mW6tOV1eJn/JWCNzIdwNUL/8wCF2KGkPnDut1fz0FjjYh3zor7fr2HGusgM7DEzLY/uXHHeafHJP5+rTdMSJAmnIF4+SFjdp5n+FGpknDdDxvm4wNSf/9P//GrvezHVDuPFi7U/jo8O1uNP4RVc5JQNAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=2b590875c3413210b0541c65e401319a"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Delete Attachment">bdc2a0170f973300dfd3694e68767e47</action_type>
+        <action_type_parent display_value="Delete Attachment">6672502a9353130079b5925cf67ffbc6</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>bdc2a0170f973300dfd3694e68767e47</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <generation_source/>
+        <order>20</order>
+        <parent_ui_id>d29ad89f-99f0-4080-954b-00441bfff64d</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>2b590875c3413210b0541c65e401319d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>a681bf79-dc7e-47ce-8b1c-ba133e554fbf</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+WW32/aMBDH/xWUZ2AJCYTwMlVFSEhbK5VqL1UVXRwHLDlOlji0DPG/75w4CZQf67RWqzbx5Dvf+e57/sQ8bA0gkiViLnIJgtDFJp+HxsSAQWQNXXPs2WMSUsv0SOAGnkWGJABcWUbXYGpfRkmShbgSENP99Rp4oQzbLYwD1wXH7gWWZfccE7weYMaeG1muOXDoGIjTvyvjdjuMDFmecth80wnQkkKG2SXNjMnWICvGw4wKY/LwqItwQzIAE7NFnmvbphlGoT3yHDoauyOXOmNMwSGgHLcukiIjtHN3rmy5SdU6TEgRUyF9Vhu/6ART7enMp+jBIFWV1TXos6QipFhOBDynXSMGEYJMso0xkVmBhoxCeCv4ptmxYkJWDcbwnLMfeLA9UPsiiv0RVQcThIV4mrFn9rVA6J637mgKEhZ4EpFFpnUjq4QRmldKhTSCgsvrfVu14TZVN6AKkRDwOjrhRSxuKoGMJkE9Fxo5NhmFOE/8BXhXTOK6kRdE9tiFiNptxPRooEWOXdBUCaYkqPSJFqvk6a7ucsZEKa3WiicEeLOKFhQyspoxytX8RREHuLdrgJQZCwqp+tsaBbs/Nc3KfHqelNNyYwxpysTST7Nkzco6UI64v+S46Ec8ecLyc7YU/YqePk4a+jO0T0vzN8iYEvIrpsHgXdfIN/k1hzxv5cR5+t8L1VQlrlbDLydRjUHFkYyl8gpPWVPd/q77p9BW2ZvLXy9rZLFWXzXk5yUsx0iqq9ZZ1M5f0uldonNo7tF5f7owDWW59EvfIZNlWOemcmgkB2+F5Ng8RPIMin8DwWOSGj5ejdIZZA60PiTmQG2W+9UV1UWXWT8QSO/GEOoGZFX2GLFWKn1zz3jX7eB+/5ULhhc5Gu5xdNUc35mxdliXi9OU5XgfxPIFYYvaqOmyL9OlLa/Dy/wvAWtkPoSrEfqfByjEDiX1gXO/vZqHxhoX65gX9f1+DTPWRWZgj5lpeXTnivNOi0/++VxtmpYgSTgF8fJBwuo+zfSnUCPjvBkyzscFpv78n/7nV3vfi6l2GC9erP1xfHSwHn8CWxwhZpQNAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=2b590875c3413210b0541c65e401319d"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>d29ad89f-99f0-4080-954b-00441bfff64d</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>63590875c3413210b0541c65e4013188</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>4a517c22-29c2-46f0-a646-3dd627b4e725</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VYUW/iOBD+K1GeKZcQINC3VatKlfa20ra3L3sry7EdsM44qe20SxH//caxA2mhUK5UorpHj8f2NzPfN3bycxFiYnghr6U2WBJ2O9fXNDwPs6Q/SocRGSejEWVxNCZZmo1jMiAZjiNKwk7IrZ/BmWAwkHjGWsMHLCo71nONsDGYTGdMGpigXJcCz3/4+S/tuRIr2MUwFZ4vQjLlgiomw/Ofv/xZdByN8/F4MEqjKEmiaDhMCI6zLBmSLMpwH7YQOGMCXO+2wzLzcjVE9ZyzfW0vC765iUJRCyXqhOy3YZIywJBjoVknnGFJsSnUfGVRDNMbKdaGKYeYzsPQOv/W/AnOHUXWL2cQFWFubjVEPjHOnF9ig2+NqoiplHcl04ITpl0+KMtxJcxF2+YcbkpbTrfEhe1WF6KayW8uHeFqg6YOYKk0gGClDdQi92Hkt9Pi8XuD8orLOid+UhQEi9UI6qx4VhmLZxEywWxZ0QyXJZcTVKrigdeLAcusOxEw6OaieIRDNZ/IruNhF/KKu1dgv6zNP7DiNoo/YRtYDIC4AIYgV0JdVKpO5QMiotL1hMJSu73CZccS8EJgrdeRQ8rRfWVxuzz4iJFLml1CFC/NF9jigfnglp336oQUknK7gV6z8pmtUYwPDHTD6d8VEJ0uFrdMPUBpgwvIjSgmKO4qdl8xbRA3bNZ1zsvlprzet9lePQ526nHc0uPFvvC9MjdsX7dt4JUZH02Z/Sj6TNqEw09PmoeLzaXgoxSnC2WQS+2ac8+N7VuKAE8MoxbZhow25vcpI6Y7lUFbyrixXA6y+WsYvTByzgTddmVd2YkXV1bv/3llnaQsABBFrnpcCi7rtgxAT1MvNdueM9GbVlqxNqzJpkpwYIrg6Q3qGOxURxa31HELpwV3r4Jqbo2aRi9vjMboRZEcTRRJ7ziiWKzCXKVuS5abZ6itcOP/ZP3xS3+gZWtBvNwmuoPOjA89s7fcFHVykKrb9HIzl6+w7Mjv1VdU2vnItjCFpf485DSNHjmdMLM+vfGihXnE4p9t855xqClUHd4pvX15jmZQSF7CW1QxAlyBj0LFUF5UkiL/Vl/p+43eDQstDXKu4PnqnDf70ncG4pNBAaoOzJQFtXew8t57l+/86szar9zrPGig+/11ANCDGnrwHwM9pMf1j/giPnaPu8Jc1PmHz7SyVUCmVKFe6XN7SreDA29sgm8EFR8V1Pu75DbSb+2We7B+im/+E+pkCGlJoBfDQTkwB05DDVO8qHd4NMSINluUa9n7exFhOOv38DBN4jiKAFkajdI0Hg2zfIjTft7qRZeFtF/8vdQEFghQIHg7VN9zsqIQDMsXTecObp4/rjxiT+nByTWeT/GTrOJ3LzPtTFtz/VEvkYr/Jfl9xWopjFjUG8WUnI3SOD3r53R4NqZ4cIbH2SBNKCP9/JiPi1//AraEf9+CFgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=63590875c3413210b0541c65e4013188"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Load Data Source Into Import Set">f9f7f972937fc6109cb7b91c5cba101c</action_type>
+        <action_type_parent display_value="Load Data Source Into Import Set">cbf67132937fc6109cb7b91c5cba109b</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9f7f972937fc6109cb7b91c5cba101c</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <generation_source/>
+        <order>9</order>
+        <parent_ui_id>d29ad89f-99f0-4080-954b-00441bfff64d</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>67590875c3413210b0541c65e4013192</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>2b66a98a-9843-4828-bb6c-49c4f29b0f32</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/41Ty27bMBD8lYBnSdDLluxbkcBAgLYB7DaXIBBW5NImQFEKSTlxDf97SUlwlDYFetTszu7MrPh0JkCtaNW9MhYUxd3J3DOyJgXPy3oZ01VWlgyTeEXrol4ldEFrSOIkJwERvo+Bhcq0vaZYaaStZq6ioMF/1Y4ge188n6GsiwLyLKyTJAvzGFYhuE1hwZMiTnMsgebRduBdLo7JhOkknB6nAQ7pQLtNFjVZnwk9CMk0KrJ+ep7E5cALvirSVVZwuvzTRBq7ERJqlK71zmm92Q1ab7b/48OeOl/TyNEtpThBX6d52xnuCF5iEhB8s6gYOm0cpMGANKDc9FafrohGYA9KvgMHoexot4E3I365rVkazBaviTmZaiaSzKrVlNpHi66D+8+d1T21vZ7ypIdWUDRjggw59NLezrGx4aHzf8xIsVDLzyXQVvaN+j5GSK7zZufrjZOHnU/EW5z88t2hfb3GtxFqCG8qypaCnLUiaHrYCJT+3MO5AgLWalH31os+k178+PtSI/jZrVBi49RUDXSdUPuq0+1RDAqcoSbaS/cRcdm+OuVG7FU0Pp/Ie482Dr8b4EfQwifzzY1xZL/xpxIvPQ6Pa5kucsyKRZjmdRHmDIuwLnMeZguW1HzJGF+m5BL4UG8lGPMeojNRvfQ+gjHSKbxqPIenUC06+8WJOuKU0+X5N/Vn0YfmAwAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=67590875c3413210b0541c65e4013192"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <generation_source/>
+        <order>21</order>
+        <parent_ui_id>d29ad89f-99f0-4080-954b-00441bfff64d</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>6b590875c3413210b0541c65e401319e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>c361d263-956d-4b3b-a774-b03405bd50d7</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1WW2/bNhT+K4QeM1uRLDu13acgWbAAXQPEQ17qTqDII5sDRakk5cY1/N93eLHrLW36sHZAsPkl5sdz+c7lM/Nul1BmRatulbFUMVhszS1P5sl4kmW8yMazYso45NmMVa+qWc4mrKJ5xiAZJMLZaWCt5nhStIHT84bK3gG73QL0RjAgV9RS2a7KPNXwoQdjS2Gh2e/RmAvTSbp9iD6IdFRjQAs6me8SthaSa1DJ/N37mHcMPMtn+QUr8qIYZdloOs6ri6LKR7ygADmGkLQCiab3X6Not50785b1DSikcwDfRM/reENur/EGnRydPBsk8GhBcUAiNZUGBklDFae21dtkbnWPgAbK75TcHi3WQtlQWkMfjfiEmceZs6sBK2Ox7OOxjC0JcH2NvVtgZGZ7HU3ZusWumtATDjXtpb06xYLBXefGG1wsreTBu5V9o96GjiTHACcT6A2SgM7V6ZiHsurFuv14fyB5I5RvSSxRtozK44laq0XVW0dnl4AE3+OGdp1Qq7LT7UZ4Z6TSpCuJh7SW7UfMacRKpWEtU+wqTW8Qv/bwA9XCFfErhkHn/SAxW3MlqTGfS8Eelh96xyQUFksofRd8C0q/Cc6ZadHZS0y1gUh8P/inkjhJcdy5v2AHaRhWohK8Cp5q4D5oBDi5DfffUkQ1eU4RbHaiiN/8HnyZXBTFE+zNqS95Gy6iJCbfTRLTlySJWMaL18QPU4JfdPN50Y7ngwKwTNcBs+yzrOC73SSrZkXG6mE9zovhOGd0OJ3CxRAY4pyOslmVpaB1qxuz2u9/R1oWgnPNh6EG4A5ePYWfauzfTv8tCWejZx81OJHwjQDJv9Tag36hwUotlKHVf9NwvCQP8fL4tH03IecXmf+8IDn/B164UGLAHGe/qf7LM2bJ+dlSnZ1dMuy7IY7p+aWnThx10husltg1kJqXHmmrP4DZlCx8ANL0xhINOFdFKPH7mBIX8c5tHVF9U+EfYUhb1wYsqbbkp5wIRX52SiO/4PpJl2IBoWGezIYK6V+i1k/fkLhNpO+QWKeRqvNZJukyIbRGzR3oOXd4pKgAmCMbTcy61Rabz0jQ7MEwxemuVqBT1mtcBpt6Qzc9Xxdmfe1ixcqOURx4vlQRdiFHr+Jjjv8C405JCTzA5DWOz9AN8ONWupG5X5X/h/LDhzL+2hDyZL/fv/8TT+8iCRsNAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=6b590875c3413210b0541c65e401319e"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Attachment">6ecdee36935023005e69925cf67ffb47</action_type>
+        <action_type_parent display_value="Look Up Attachment">aabdae36935023005e69925cf67ffb5e</action_type_parent>
+        <attributes/>
+        <comment>Get the latest file</comment>
+        <compiled_snapshot>6ecdee36935023005e69925cf67ffb47</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <generation_source/>
+        <order>6</order>
+        <parent_ui_id>d29ad89f-99f0-4080-954b-00441bfff64d</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>6f590875c3413210b0541c65e401318c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>c4cc18fa-372f-4509-8e80-76290b1bd00d</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VTy27bMBD8lYBnyyD1lm9FjAAB2gSI21yCwFiSy5gALSkilcQ1/O+lHrbjFE2LtuilJ4nDfcwOd+62BITTVXlZWgelwMXGXkoyI5zHeZZSUUR5LpHRQvCMF0wkggOjSpEJ0V2c0gaXJazRA/3nFHoC03aY/5Xa1gY2t0ekhsZHOWzIbEvEShvZYElmd/dj7RCERIzSIkpoGFGaYFoUYSJUminFY/AlDHA0PvTC9zy7+iENt6k7yLpGlw/j+eOYutiDVSM7KmxC8MVhKdFzUGAsTsgaSgmuajYHpEGQ16U5AitdumGsNbxY/dX3yymlXaRCP5cYhz4cl6MgA6zm4MBTaYVrmzFUrCot0A6KSFTQGnf+GhsCruvuAYcUB9zssyvTrsurQQxyKPBK/9Z6Elh3o3bcx0HUYlU93+xZXuiyV2W8NJUAcziB89rx1nV8tqTVn9/IPCDfCY0G177jcg117ZFl3VRPuu/iSa+nD8YfpspUz56d1Q/ldFjRqX8CmF54fN7Dt9DobtxPvoxP7tp9KfVji/0Cpygp4zILijjkQUzjJOBxxgKaMEDJsBBJTnYTYjf23IC1R6H8Cy0f227MQbZRoOWgcZciGl27D57UE45a7CZ/aiRbtY1figaF38PjFr+F94babiHnWQZxFHDGIj8gFAH4+kGmWEbDGHMQ8fSmz9vtfst/gO/5L6Gv/LfoaZ7d/IT96ENZibbfAC3fmHE+3pxdzo+ODN93pDfNLxoyCv9HO56qferJU73/iTHjNM5oEcZBUmRJECc5CzhP80CqEEImBTBM/6Ix778BSkuWJeMGAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=6f590875c3413210b0541c65e401318c"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>d29ad89f-99f0-4080-954b-00441bfff64d</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>a3590875c3413210b0541c65e4013189</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>a8b77a43-b113-40a9-ae10-7f17024e8ac4</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VYXU/jOhD9K1GeCzfpV1reVrBISNxFWrj7sndlObZDrevaWdsBCuK/7zh2SugnvVukon30zNg+Mz5n7OT7U4yJ5UpeSGOxJOx6Zi5ofBJnWX+UDRMy7o1GlKXJmORZPk7JgOQ4Tdgw7sTcxVmcCwYDiaesNbzDonJjMzOIYouRUZUmzkO5KQWefQsBZ+CMrhtniTWsY5mOT55iMuGCaibjk+8/wm50nIyL8XgwypKk10uS4bBHcJrnvSHJkxz3YQmBcyYg9GY1MDsr50NU+7ztsj0t+uIdSlMHJenE7MEySRlgKLAwrBNPsYS8lJ7NLZpheiXFi2HCpYUVYxf8YPgj7DtKXFzBICvCvG8+RKEy3ly4wlxbXRFb6RBKJooTZnw9KCtwJexp2+YDrkp3oH6KT9vPVqKayi++HPF8geYgwFIZAMFKl6hDHtIorifq/muD8pzLuibBKRTBYj7C1mqeV9bheYqZYFNYCE1xWXJ5i0qt7ng9GbBMj28FDI4Loe5hU8Nv5bFn4rHjy/E52M9q8zesucvib1gGJgMgLoAhyB9h4NVJfIeIqEzt0Fgav1b83HEUPBXYmJfMoeToZ+Vw+zqEjJEvmptCNC/tJ1jijoXknju/qxSiJOVuAfPCyle2RjPO928FBKe1OD5VVk2xC4qOos8PANaw6JJLZpbVtMvUrVobbNTauKW1022pBdUt2S5XLRBUl+5Ndf0k+Ui6g80PT3a7C8mX4L3UZJS2yJf2hXOvje07iABPLKMO2ZJolvzblJHSjcqgLWVcOS5H+WwdxiCMgjNBV11H586xcB11/8zr6CBlAYAo8qfHpYDO6ogPQA9TLzXbXjMxmOZacTZsyLJKcGRV9PgGdQw2qiNPW+q4ht2im7WgmlujptHijdEYgyh6exNFr7sfUTzN05yXbkWVmyemO+Em/tHF48V4oGVrQvq8SnQ77Znuumf3eVnUvZ1U3aaX95ytYdme36JrVNp5z7YwgalhP+Q1je45vWX2Zfcmiip7j8V/q/yBcag5qDq9Q3rX8gJN4SB5Ca9xzQhwxSCsGSpUJSkK7/C5vt8Y3bDQ0aDg2tgQvNyXvjIQn4wUqDqyExbV0dE8eutdvvGLMm+/ci+KqIEe1jcRQI9q6NH/THSXHtff44t43z3uHHNR1x8+wcrWATKtlV7T57Yc3QYOvLEJvhFUuldQv98lV5F+ZbfcgvVDfM8fUCdDyEgCvRg2KoA5sBtqmBJEvSGiIUay3KJ8y97eiwjDeb+Lh1kvTZMkTWiWjLIsHQ3zYoizftHqRWdKuu/8bmYjBwQoEL0daug5uVKCYbnQdG7g5vnrPCAOlB4cXOP5ED/AKn6zWGlvWlnr93qJVPwfyX9WrJbCiCXdUUrJ0ShLs6N+QYdHY4oHR3icD7IeZaRf7PNx8eMX9soMGmAWAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a3590875c3413210b0541c65e4013189"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Copy Attachment">30fe6cdb0f973300dfd3694e68767e5a</action_type>
+        <action_type_parent display_value="Copy Attachment">95849c2a9353130079b5925cf67ffb91</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>30fe6cdb0f973300dfd3694e68767e5a</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>d29ad89f-99f0-4080-954b-00441bfff64d</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>a3590875c3413210b0541c65e401318b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>749be53a-f63e-4847-8833-4cae03a82e54</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/82V227iMBCGXwXlmqCciIG7qqhSpd1WKlVvqlU0scdgySRZx2nLIt597SRAgNLdVVttlavMyTP/+Ese1w5QLfLsOis1ZBRnq/KaOROHh9GIxB4dh6MRQ98b05SkY58OaQq+x4nTd4SNA62BLpaY6UQhzRUzjgyWeMb1BLKyvvU6gqFPaBC4wZgGbhRzz4U4it2QsTggaYQkGA7u6rzNxmQyURYSVg9tAWMpQJmDNCpnsnboQkimMHMmjz/a1jjlGFOWenxMwtDzGGdhPI4wNoMRHIIpISFFaUJneaUo9i52Hffu/mIYvSqsSyFHczLF1vStLXrXsZsE26ffd/BFY8bQNMhBlth3lpAx0LlaOROtKmNQCOw2k6tdxEJkuhl5CS+l+GUODYN+59yJU67KZN+i03EmrXAm6KIbwKegYWZOpLpSraJ0kQuKZaMhQw6V1JddWxNwW9gb06RoSOU2O5fVMrtp9HJ2BTobq0rTDhZ2fjtROx6fLfLnnVhXIqulap0ypyA7oQiKLq4EynrDQmJSL6hvF6REWmnb6tqpxP3pchrja+tBifVql1AUIpsnhcqfRN2GmWo5mEvzMuAyfzbtl2KeDRpoBmZxMLgy9mltfgAlrB7fTRmTvOnbvVxKKMu9Kqah5GdlZ2o0atVIGkFtClWi0BfmgCdsB9/034upBjXHU0SPzXs8YZQSAlHopr4fupEHYxdMfZdwn3hBhCOg0fvwNFy+gWfsdfC8r9s8YfK4+5ZHltOq3qZgR0ROW0/verpnMvgsJs9Q+D/YQx6FNGZmjeZJh8TzKCF8nPJwRIBjuM+YnuzxCNpGj39g9gyYh1s6RPNwT18FzkbuzyPUVu/c7eZ1S6T9wNuBkrL+VZ0SZ69Ub7Z1/vHfGL0JHzmA79XGWtjq1+03uMtanda7aRwtauFHoTbyvixqH/GbO4PMgdaHxByoLcqkuaJt03XVLwTSOYZ+/AYmpDICjgoAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a3590875c3413210b0541c65e401318b"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Error verification for the expense line">51f3ba809388de109cb7b91c5cba1025</action_type>
+        <action_type_parent display_value="Error verification for the expense line">1c85ee449308de109cb7b91c5cba10b2</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>51f3ba809388de109cb7b91c5cba1025</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <generation_source/>
+        <order>10</order>
+        <parent_ui_id>d29ad89f-99f0-4080-954b-00441bfff64d</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>a3590875c3413210b0541c65e4013194</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>50b930cf-f413-41ca-88e6-ecb93da209b0</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2WW2scNxTHv0qZ59WgkTQayW/BxmBoG8i2eQlhObrZA3PLXJxsF3/3nrl4L67jJo4JoenDLugvnaNz/tKP0btdBLbP6+qq6nqorF9vuysXnUUmE8pIajVXyvmEamsyoxObWgMJZTRaRfm4Li+buu03ncfftkNpFVVQ+sdnbqEYxqndjhkpQSsgWglOhGKKGCMtEdqKwLShgbN4zoAJpvi7O8zg8q4pYPv2mxM10GKZvW+js11kb/LCtb6Kzt69X/pyLnADin6mf4UpCjC+wKVXU/Zf1h5/6N7Fkxb022ac6fo2r66X8a9LovW9WLduLCxZRf5T7yvnsaIARedXUQmVg75ut3ul9eBeV8VBuMmrHrNF4+JPXf4X7qcopePK4LFL6+fZ/XCzuDrL4QJ6wFIG2w/tstTe1Ln13eyP8wGGoj8/1uYFr5vxKs0hPZjiProuhrL6ffYk2ie4P0RUhg6L8M3Y6lj70khY39Qf39xXeZlXkyvLZFFbKPYj6NE7M/RjPbtoyP94YPOs/MNoX/gSd9yU0DSobJq2vs2nXbDoMr4ucBCHov6I1XX5dRXPsMR4BBBfon4xyW+hzcd2f8M0GDxu92eVfxj8hJIyQaUAKRGUG/yzCdGcWSKd89JxziSY6G4V4RU5L6DrDkbhCW0+DGObs22LQZvZ4zHEtnnTv8Kibv3ixd3qW5EOeeFtPeBB7C/ysXSAOMs8Nx4ECTJoIiQXRKdpINbZRCmvtFQ+voV206KBU/hjDH8JjOmTMLojGC+x0vPPF7/gh4T46+mkjvm72qsLgOzFABQ/JX4Hm0/5Oxj9XQDUxorEU0ocMKRQ+YQA4NcioZzSRBqeev2jAdgN5ekNnoVnwofBz0QveRI9njxAb/142Qt2ztu8RDdPsbvYqwt2/MWwS9KfEbuDzafYHYz+Pt89LSEwhA2Bk0RkFh9pzkiSUZWajGoHxv5o2E039+QCL8oBPAFpklnGCNOWIXiBEpBCEu6cZJkRPmNp/Aa/OK2LxwSbMcPjj9fnp/o3bK3QPAuMaS5UKh/2HOAI2yfb/prnqvj/ufpfeK5qHlyGT1UCJglEpKkkxnFJNAgqU85S7uQLYvv+bzh9MKqDDgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a3590875c3413210b0541c65e4013194"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>a7590875c3413210b0541c65e4013184</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>3f9ce309-afbd-4256-94a0-701b9e6daf99</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVTU/jMBD9K5XPVZU0pbS9ISqkSixIdMWFRdHEnraWHCfYTqFb9b/vJHZDFlg4LHtAm9t82e+9zJPv9gy4k4VeaOtAc1zu7EKwGRtno8npOOLTZDIRGEdTnp1m05if8AziKBuyPpN1n0FeGEGRhhy78RZUVSf2+yWareTYOwcHqlin8cDgQ4XWpdJhfjhQs5C2VLC7DTOUKcHQgQ4Nm+0Z30glDGo2u7sP945QRPE0HvMkTpJhFA0nozgbJ1k8FAkgxnSEggwVtd78CaLblXUsCl7lqAnOMXkZJueh0lvMqUJDNZw46jN8cqgFEpAVKIt9loMW4AqzYzNnKkoYBHGt1a7t2EjtPLUcnqz8STePorpvhcSMB9ptmAZJfHo1J+2WdDJ3lQmtfFOQqtZrInAFlXLn3ZxvuC7r3+tHHGTqOF2oKtdXXhHWHtD5A5UlEFjWPGvkntZquSkeb44gL6RuJAkUVcFBtRE4Z2RWuRrOnqHCRuMcylLqdVqaYiubYYKSD9aKgsFKFY90p5VrPfBrOSBVYXBB+XmTvgUjaxLf6BgaPvSZ3dlzBdY+UyEN04eqRuKJBQppo0IjQdpsQj3MjSzdGV21xQD80P9bS3SuaHfut9zRGpan5ITGBa89cOM9gqK38PWPHJGdvOcIPu044nuzB2+DC6Z4lbvszvaufCFY4uTTLDH5SpYINL68J/6ZE5pFt8+L1satAxw4/FFFUSKGry3wovqRAaLhu08CdgxwIVGJt4Adtx9zAuIw9UBfOCAUe7eh2D4Mn2aDeBw13xcyw3/zPtz/Ann4E480CQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a7590875c3413210b0541c65e4013184"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get Catalog Variables">330ba3abc31013002841b63b12d3aee8</action_type>
+        <action_type_parent display_value="Get Catalog Variables">22f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>330ba3abc31013002841b63b12d3aee8</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <generation_source/>
+        <order>8</order>
+        <parent_ui_id>d29ad89f-99f0-4080-954b-00441bfff64d</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>a7590875c3413210b0541c65e4013190</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>77e3bea4-f6f9-4634-955f-cdc188e8968e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/91V227bOBD9FYPPhkFZimX7rU03QIDuFqgXeSkKgqRGMbEUpZKUHa+Rf9+hRDnKpUmK3S7aPmo4lzOXc/TpSLj0qjaXxnluJGwO7rIga5Km2VIsqFyly2UBCV1JkYtVIs+k4AmlkkyJCn4WvrTgPBRMeajQangFT9l3XLfh4XjcgN0pCZNz7rmur1kyi86d6+0tOhfKNZofrmIMWhpuMbEHS9ZHIrdKFxYMWX/6HHGIkgqeciHThCYppfNllohFKpJ5kXIAjik0F6DRddOKSnmENvnY130GtT80vb0ErCchmt7HVB9H9toWAR2dErjxYApAWCXXDqak4qbgvrYHsva2RYMFXnww+nDy2Crj+0YrfuPU31g0nU9HddfESYbwBmCnFxZn1aGJ6CeXvVP5Dke8wZLStzYOUm5rHL7rR1dAyVvtz8e23uFDE66iD/Fc6CG61m1l/uinRU4JRotqHUKCJgwgtBT7Kzfben+a1oUy3azio64l1yNX4FZuLxTosFjTVgJ9p4R7b5VofcB5JKChwgKs4k2jzDVrbL1TXVLEWM2uNX7MSl3vEYxT12bWn/kM98BnF2h/15mvuFWhu98xTVelxq2wwtZNE5sOCyO3U+IO7lxz5+56xxWwL21A3k8i9sz6sYUQaVXj32DhHcT2bqf/lnC4WVy3ByYjfe7z7mvPA/0oB76gxTzLS5EtsEyeZxnNVkmyKLJ0tXpMvsuqqa2f/HaD/TmYvFcGN/AKQornCFkmI0L+GTEPitCdr5sgaSbDfiYb8O7lLr+drsl3o6tneDL3ADqGidkutsRc39JTTH55EL8EtUOt/4vYyqF8VjXeTNczG++q4zjyFRvBrQSId8Yt1mO2NV5VwDoWMWVY3bidgv0PqA/DwQ1nNmLNU0+DLoh8QbkQPMvzVPKHunBG1+GAse0AjRnYTzkV80VawtMBdPkoQNDVioqzsyzPlsUj5VlkDwMeK9EPifElHcyf18F8pIMD669et7oodk63bita+Rf4B3K3CS+Tt8NTVLz584oXLa+RvGROKb2vel/Rs59VsO5LE0pIiX8dnN3dHvAKoJsk6UKw6PcSsFcJER6dkbpFzwpHoSxWOUENP46TWxjNCARYtrd9pZNLYzHG7sKPSoP0XZODUtatlVFJ0fqQFf+dHH7+Bzqp3rWhDAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a7590875c3413210b0541c65e4013190"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <generation_source/>
+        <order>24</order>
+        <parent_ui_id>301ede08-644a-4d9a-a5fd-8f3641dc960a</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>ab590875c3413210b0541c65e401319f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>08544dee-4447-4245-a7da-44c7b81f663c</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXU/bMBT9K5WfqyppWtb2baJCqsRAohMvjEU39k3ryXGC7RS6qv99N7EbusFg0tgDWt7ul33OyT3yzY4Bd7LUC20daI7LrV0INmOT6Xgc5ZPJNIm4wDia8uxDNo35mGcQR5CzPpNNn0FeGkGRhgKP4w2ouknsdks0G8mxdwoOVLlK44HBuxqtS6XDYr+nZiFtpWB7HWYoU4GhAx0aNtsxvpZKGNRsdnMb7h2hiOJpfMKTOEmGUTScjOLsJMnioUgAMaYjFGSoqPXqdxDdtmpiUfK6QE1wDsnzMDkPld5iThUaauDEUZ/hg0MtkIDkoCz2WQFagCvNls2cqSlhEMSlVtuuYy2189QKeLDyO908ipq+HIkZD7S7MA2S+HQ+J+2WdDJ3tQmtfF2SqtZrIjCHWrnT45xvuKya3+tHHGTqMF2qutAXXhHWHXD0B2pLILBqeDbIPa18uS7vrw4gz6RuJQkUVclBdRE4Z2RWuwbOjqHCVuMCqkrqVVqZciPbYYJSDFaKgkGuynu608qVHvi1HJCqMDij/LxNX4ORDYlPdAwN7/vMbu2pAmsfqZCG6V3dIPHEAoW0VaGVIG03oRnmRlbuI121wQB83/9bSxxd0e3cT7mDNSxPyQmtC5564Mp7BEVv4euvOSIbv+QIPj1yxOd2D54HF0zxJHd+PNu78IVgifGbWWLyniwRaLx7T/wzJ7SLbh8XrYs7Bzhw+KWOokSMvhJ8EgCUjw1+Q07r/9QZfzb0ml2i4YsPCB7Z5UyiEs/ROHgFC8LnMPW0fvFLKPauQ7F7Rt7MNPFJ1H7vyDr/zWty+wM53wQpYgkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=ab590875c3413210b0541c65e401319f"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment>Rename attachment to ITEM-YYYYMMDD</comment>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <generation_source/>
+        <order>7</order>
+        <parent_ui_id>d29ad89f-99f0-4080-954b-00441bfff64d</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>af590875c3413210b0541c65e401318d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>e037699c-924f-49d1-940d-2030b12eed7f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXU/bMBT9K1We28hp+pH2DVEhITGQ6MQLQ5Fj37SWHCc4TqGL+t93nbghGx08jE1C69v9ss85uae+rz3KjMjVpSoNVQzW+/KSe0tvnkyiZEbYIowiDgFZsGSeLAI2ZQkNCJl6Q0/YPg0s1xwjRTPoxzsqK5uoazZhLIhSOgrn43Q0mZLFKIKIjOaz8YIkQcIJ4X5BNR5gQB8OOMxFWUi6v3NnYKare8vaY1shuQblLe8fHI4JcBIsghkLgzAcEzKOJkEyC5NgzEMKEOARkiYgsfX2d5DNvrAxz1mVgTKxOCav3OTKVQaXK6zgkIUTkKEHzwYUBwSSUlnC0Muo4tTkeu8tja4woYHyGyX3XcdWKNNSy+hzKb7jzRNi+1JAZszR7sLYSdKm0xU1dI0nM1Np18q2uWBQtppwSGklzXk/1zbcFPZztyOGJvI4ncsqU9etIl53QO8LVCWCgMLytMhbWul6mz/dHkFeCNVI4ijKnFHZRdQYLZLKWDi1BxIajTNaFEJt4kLnO9EMI5TM30gM/FTmT3hnKTbKb9fUR1Wpf4H5VZO+o1pYEl/wGBw+DL1yX55LWpYvVFDD+LGySFpijkLcqNBIEDebYIeZFoU5w6t24IAfhn9qkd4V3c79lDtaBaHHqBJlWyvNaxuc9WvvGSKZvmUItugZ4muzBqexOU+8yl31ZwfXbcE5Yvphjog+kyMcjU9vib9mhGbPy5dF6+KjAVLhluxbRUjI63oNeodfaHCOFGW+iQNfwyPO4H+zgcxXVZbYF2P0bqe1FsONM8CR5Kk35p/e/Z55yfjN1wx65r0QIPkpUY/OhQxpGohbkX9xrysO7lyxe9M+zMLBjDS/T2Tk/+Zpe/gBNVKZFf8JAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=af590875c3413210b0541c65e401318d"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Run Scheduled job">975eedb0934856509cb7b91c5cba109a</action_type>
+        <action_type_parent display_value="Run Scheduled job">436c2d7c930856509cb7b91c5cba10a0</action_type_parent>
+        <attributes/>
+        <comment>Process Expense Allocation</comment>
+        <compiled_snapshot>975eedb0934856509cb7b91c5cba109a</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <generation_source/>
+        <order>18</order>
+        <parent_ui_id>8d2e3515-779f-4ff8-8d02-474982800153</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>e7590875c3413210b0541c65e401319c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>ffb5643a-cf8a-45d1-bae5-736f412ec17d</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/21Ty27bMBD8lYJn2RBtS7J8KxIYSJA2QN3mEgTGilxaLChK4cOJa+TfS0qCo6K+cYf7mJ0hn88EmJOtvtPWgWa4O9k7TjZkkXNc0OWqXK7WWZ6lJauKqqQsYxXQNGUkITLm/W6rcNTQ4CU4gvIxohQ5XeW0FEu6CDW8EJkoSiGyQjCRliGVS9spOD2NFQHpwIReDg3ZnAmrpeIGNdk8v4zzaJEh8iq9zqvE0EJBheo6NXfqYmBQYGjLcIQexoofE7w1PJKgCcF3h5pjmC5AWUxIA5qDa83pghgE/qjVJ1BL7YaFGni38k+Yulwkk8EbYk8WvGvJBN2PeoTbHauRe4X8y33PXNyCg50znjlvRq1Y3UqGdlCHowCv3M0UGxIeu2jwUOKgUv8OZ63yjf4+qEQufSaWeBuIYRc1iEuNG4pd3b5dBNtK3cs1XqqWgZqkIhhWbyWqaGHvSELAOSMr7yLZM/Hy5//eDOA1d1BhE9jsG+g6qQ/7zrRH2TMICzXzgwrBXKj2LTC38qDnwyufB99gvg34bQ8/gZFRkW+hTSiOE39p+eqx/wO4TotyjXSW8TXMVrlIZxWmOMswX7E8z8NzE+QjiWLeKLD2U8SwxP7VRwkGSUfx9oMNsYQZ2bmvgdQRR50+Xv4C+Lri+o0DAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=e7590875c3413210b0541c65e401319c"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <generation_source/>
+        <order>16</order>
+        <parent_ui_id>d93d2657-4939-4838-918d-15ac5c8fcaf2</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>eb590875c3413210b0541c65e4013198</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>b672f180-475f-48c3-b640-623819e691b4</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9VUXU/bMBT9K8jPVWQ3IbR9m2BISBtI68QLg8iJb1pLjhNsp5BV/e+7jt1SMdAetofRl8rnfvic65tztyW8crLVV9o6ritYDvZKkAVJT1k+o9N5djarRM7o/Owsy2g2ZywXWUpLMiHS5zleKig0bwCR8e8VtuGq96AdLGxAO4SEtJ3iw22MfI5wxw2WODBksSXVWiphQJPF3X28KmdAT+csr1KWplNKp7OMlXlasqlIOUCGLRQvQWHqd8/gHUJu6N7EvhzXnlyHQGuE50MnBJ4daAFIpObKwoQ0XAvuWjOQhTM9Aga4uNFqOGSsJepaEOJzn638idfOqM+rAZVVEGKHYxHnEuD6gju+xM6V601MrdatrMCGmQioea/c+TEWEm46/6KhZJQZq1vVN/o6jIQcGuyfAZHeIgnovE7PPMqol+v26due5aXU40hiULUVV4cTd87Isneez5aAggYbFQ3vOqlXRWfajRyLkUuTrBQeklq1T3iplSudhFVMcKw8uUT8YoRvuZFexVdsg8W7id+lc8WtfdGCQywee88kKIsaijAGX1IZ2blPeMEGIt3d5G+Xf9xt+7Jnh/N+6T3+o6c0RTJgVtIEbbx3bcNHrfCMVC0kSmp4wC+gYSF/ux0Hs4naE906WZed3O3GrOk+awlmg09+co59VbsqWGLgEUm4QjpoEpxUUeFiOhBFOex2v399/yPFPzqBADp/1wlYeeQElxKUeOuJ9jYADU7DQRGe7JUVxODJbQxGO2D/yg5YTsffBzKFIO7De8KR/b/jDve/AJUt1M4cBwAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=eb590875c3413210b0541c65e4013198"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Run Transform Map on Import Set">b24b35b6937fc6109cb7b91c5cba104c</action_type>
+        <action_type_parent display_value="Run Transform Map on Import Set">cc287572937fc6109cb7b91c5cba1036</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>b24b35b6937fc6109cb7b91c5cba104c</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <generation_source/>
+        <order>12</order>
+        <parent_ui_id>8d2e3515-779f-4ff8-8d02-474982800153</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>ef590875c3413210b0541c65e4013195</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>60e53a5a-a64d-4468-95ea-972b860f9e3f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/71V2WrkMBD8lcFPuzAefMiH5m1JCAQ2G8hk8xKC0eWMQJYdWU4yO+Tft2V7rlwb2JBHlUut6uoufL32CLOy1qe6tUQzsVi1p9ybewglOU0DhuM85yIMMKMZxSFLGCVhEAlv6knHa1et5EVZm0JWTW1sK2xh68J0GhiaVOJfnHuiOkdaryOapgTnxMc5in2UR7lPacp8hBkqI0yDMo5m2wp90acnqMBl2yiyuvrvQg0xINgK483XHltKxY3Q3vz6Zuw1FojGCU1xnJUsfe5JwqCEIlQooDobjyfQ8mR4ZyHsxNaTj9tiV03PsUbq2/H8c1N8A9aGO7Hh1BOPVmguQGVJVCumXkU0J7Y2K29uTQeAEYSfa7XaMpZSWyjmOe5jK//Ac3kQBI5ZCmicieHr9liMRg9weUwsASUds50ZqWxZSybawTIuStIpe7SPDYTzxm3ccMUSqja3a9VV+tdgjrctsJkrIF0LIkTjOnXax0bKxbJ+uNioPJG6N2X8qGpG1PZELFhHO+v0rL1OXj5zeUBe+CyUqODFoiJNA0jRmPpe9q+A6Gp2q+AwK1X9AOpaeatnQ6ZmMAEyOwH8uIeviJGu3TMoA5fdc7+1vOtEnzicZ3nMaOCXWUR8FGfYxxRWF5c8EAnN0ygpvaepW5sjRdp2ZxRMqLjrXJuDbaNBxeCxu8KMbOwPEHUvRi+epv+bfGuIbmF7K2dL0Ra7xX7lyyblUYwTxMOQUxQFBAdpFHGUBDSMcRpilLyMc+fSUdiqUUVZFeIRmoMtUFKLDySWkvcSm4Z7ib3ciJ6A6G+L7++2M6Zzl5TDgF7s4WNGo/czOiIfCWkcHUYU9qE4kPhGZi/d6k12bZ71zE+O8WtiviDX5UIQw5YnUig39n5wb6Z9f2qHgd+f25dknvA4LAUP/QQLDP+nEPk0SDKfoDBFLMoyFLJPzPzNX8U8O53vBwAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=ef590875c3413210b0541c65e4013195"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=4759c475c3413210b0541c65e40131f1"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=4759c475c3413210b0541c65e40131f1^sys_idNOT IN23590875c3413210b0541c65e4013170,2b590875c3413210b0541c65e4013174,97590875c3413210b0541c65e401316b,a3590875c3413210b0541c65e4013171,a7590875c3413210b0541c65e4013173,ab590875c3413210b0541c65e4013175,d3590875c3413210b0541c65e401316e"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">ab590875c3413210b0541c65e401316f</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>14</order>
+        <outputs_assigned/>
+        <parent_ui_id>8d2e3515-779f-4ff8-8d02-474982800153</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>23590875c3413210b0541c65e4013170</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>d93d2657-4939-4838-918d-15ac5c8fcaf2</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0bPSfB34r51LYVAt46l9GUrRpauEzFF8iy5bRbyf9bf0T+2K38khWV0W/s4MMQ60r33nGMdsiW6sVVjzbU+NUYsFTn5fDsiQjkM37eklPr+Ui8FmytjqWKw2Jg5JyckSoI09sMsns4YTwM/m07j2I+zIEh5HJVAsI07x7TiwgqtckXXDm1/juB3VDZuY9Ew9vTDeGNvITwJnt1U4HF8tFJPj2A8MNZ793HuYQ0XppJ0c/MPpRWtca6FmpxsCVsJyWsY5DvepU/LIGMBi8I0Cn0/nMVBkUZFEPKIAo2whaQFSDx6NkjxLlvk9xodIcSNrYVa9uvLvstiAHXNHavAHxF4sKA4IJ+SSgMjsqaKU6vrzR6pgfIrJQ/ASiiL7Yg7/GDEdxwYJok7WAJKZNBt7pd5b2IHl+fUUqTSMNvU/VG20oKB6czhUNJG2rPnWHfgqnJSuxJLCzlUa9ms1YfOEbJvMHwzRBqDJKBySh31Xke5WOn7TwPLC6FaV/pNqRmV+xW16F3RWMdnS0DCGhvla1pV6Ghe1fpOtMXIZT1ZSlxM3L3Goe7OTyhzxCdoLJ1cIH7ewje0Fk7Fe2yDxR3NghrB8jYf2A5tArIbEbMxZ5IacxCJ7ubfGkexk9yLyzt/XAmrRWVPcfId9Dp2o7eM25Fb+Cxk2+10ClEBNB6XaZmN4zSKx1mSlGPGWTCbwSxLZ9BakrtLutt9aXw/4kUlfo3d65q9FMSMJmUS+MnxIMbpsSAeF/836QtfSJ/79H8YPt/3/6fv1ekTJu8y02trh79h+G5dOLqZe6+ZMEjt2mHz4S/RbWzwcrmIHqB7XX91og7Y7ienLNbfXAcAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a3590875c3413210b0541c65e4013174</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>22</order>
+        <outputs_assigned/>
+        <parent_ui_id>d29ad89f-99f0-4080-954b-00441bfff64d</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>2b590875c3413210b0541c65e4013174</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>18ba342f-c396-4870-8937-c2b04c02cbab</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">d3590875c3413210b0541c65e401316a</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Try">07223332de022010ec58424b73829721</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>97590875c3413210b0541c65e401316b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>d29ad89f-99f0-4080-954b-00441bfff64d</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">2f590875c3413210b0541c65e4013170</block>
+        <comment>Notification BPI</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <flow_variables_assigned>notifbpi</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>15</order>
+        <outputs_assigned/>
+        <parent_ui_id>d93d2657-4939-4838-918d-15ac5c8fcaf2</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>a3590875c3413210b0541c65e4013171</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>9dcd44a9-3da6-4a86-8393-5945bade5e04</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Y247bNhD9FULPliHJsmT5Ld0gwALJpoi3eakDgyJHNluKVHix4xoG8jv7HftjHVqyt82iW+SpRWvAgDxHM8MzFw4JHSLtXeedvdevrBVrFc1//jSKhAoY/j9EjdS7t3ot2K2yjioGi7295dE8anhazJKsyssZ40WaVGWZ50lepWnB80mSRegm6CntRFN3AmVFW/gzsqXSB+gHrX7R3oyWPkkmrDanJ7woqaW6ASYIWEc6tCVb7S0RqtGmBUM+eyASLJEYFD44EP740IGyQfCkEWwjUI0so8Mhp9O0ZFkWZxXL4rxokpgWeRFPOC+yss6hzKbjD8C04eNGSFiFQI7HZUSI1QqXN48PFpQLrqmyZAFmKxjc6R0hc/JyFAR/MbnTbW0gsBz4zsnhUJYwqYHmcVM0FdKa5HE1nTYx4yydzWBWFTMYb6lZGb1bMe2VQ07fuo/JvXZUosPv9Wh9+8zfsxI8fiVYTjAjTHhAs1JIsieUZES0nTbOjohXfYFCOX5ECBrwQgZp4Qx1jw9rgdWyBNxF1WFbEgbotC/wRptQw5ftv695luodGBaakAvbSbr/eO3Fay/+073YUYP1xCCi+SHCtpDcwHkoh2la4njN/3Lqco4uJK1B/t3gdfsuINYZodaD/HYwXJxB7LFAJBlF8MWB4oAMGiotjKKWKk6dNvsLYoDy90o+ARuhHHqLgvIXK37D9WZJkgTNBjAqBv3bi7gaNmIPN6+po0jFM+fNoMo2GnvZ9vng0FAv3c0fsV7hfeeEVr2Jo7U8W2vpW3XX5yK6ODjve0S8RRLQhVAD9yGQZrHRuw9nlm+EOmVleCk1o/IiUYe5q70LfA6RF/ffpLlHniUaJLS44qqlXYfIqjN6K06rIOl2vJYojMNJjOzCKT2mLEQ4xhLQ8RvEX5/gj9SIEO47dIPGYbmfVOjH04Gdsqqg06qK6zLBDZeXTTyr0jxOsiyfTid01qRFdBxFdm9vJLX2KVFYodVnH8Ls0zYkaNXnOJgwIzr3CkltYcjF8VM43Xs+15vEdXr/L6b39SZx7cV/Sy9ebxLXm8R/5ibBcSZa5HkfSN2ev06EF3vsyHCleIJ22vwaInzCjr8DaMfxiucQAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">23590875c3413210b0541c65e4013173</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>19</order>
+        <outputs_assigned/>
+        <parent_ui_id>8d2e3515-779f-4ff8-8d02-474982800153</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>a7590875c3413210b0541c65e4013173</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>b974a299-5d61-4e43-a6b3-d731ff2a2164</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">27590875c3413210b0541c65e4013175</block>
+        <comment/>
+        <connected_to>d29ad89f-99f0-4080-954b-00441bfff64d</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Catch">35d60003e6022010a5e40cdd1254dd21</logic_definition>
+        <order>23</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>ab590875c3413210b0541c65e4013175</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>301ede08-644a-4d9a-a5fd-8f3641dc960a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1ZW2/iOhD+K0dRHyknKVBS3qp2kThqi3Rg9+VQRY7tUO8aJxs7tGzFf9/xJeFWqm031dmHSBVNZsaTuXzzOYZnLy1UVig5TS+lZHPhDf67b3lMaBlcP3sJTx9v0jnDIyEVEphOVnJEvIEX417PT8LwouNjQgP/Asf9+CLAPRyjwEd9D9xouyiCdaqQUQQSgRZ0X7ZEvNDC55m3pLlkqZh5g5kXtP2Z15p5kuYMcfYDKdAM03yBlNH/MxnfGQOcLjJOn8bxV4rVBD/QBQID8DaE0K+pzormg+H15dV0NL6bTC+nnyfWAKeEGl8joeic5s4doe2ThFFOogRhqqQ1njD9mFuUDbXQLHuezWZewaarjN6gmHJ9O9Afpb+Z9ggfOUUkSgVfVRYJ4pJW+gcmVKWqpNZzJWd7TglNUMFVZOp3uJrvRHSlUy1VCOtaRjTP0zyyAKgMVV5sDBdIEKTS/FjcaU5sQEYXbK17ijgVc/VQKbu+/lzDH9R4QaVEc1v7icqZmJvSO/HvVt95rLX4ctfnm2p/67L94PKfvV5+v2qA7sArs9E+UZD5L1X/TWW4NGn/NTGTX38xCvZZsO8FHZFN0ogkQEr49IKc90+7FyE5DUPin4bkHHdIL+wmlOw1fBdJllMqE5xGpjSaxSqbPWIpbSmnCypUtEBZBsiJsjxdsu12AW215xxEbU2xETHNaNtytCFT1N706AsCDoxNB7L30IooOH8J1elufm8Y5/PeHqB2WHiHXuHqBC/LCwOer2iJ2hyJeXtr+k+WRuf8bSjiHevXa9hXCJMZR6svzfbSbC/N9tJsL8320mwvNW4v+IFxklNhTknuXKNDAlWGcrhXNAenniEbA2worxZsIQGWOC6HVS9AFfQapEBq1SnpcGMDicQ5y5SegCVITJdKITxx3TLkngvEb5j4ZpdshQ8HvoJdW6c6NDBgVVQGkfwgWHO0g/+l5spmvlsH9ZKzw8QNLrxB0PLok6KCUFLlUE1lJdGgHAMmvYGuTMuA0IYCMJLsBzyw62uzhEJ22BWouo1c8aw4uYZBgB4XWBU5LQuTMkylrYu9GWe6M1at9KA4y5QXC3FnU9Z9sXS11RcnuT5oWCEhEprpZHX4Lrdk8pA+/luGOmTC1MUpeYoRr+6QAmTGhdKB6gbLlbziSMpNNJBy9L3QS2wk7mGRTWT9ImjWrQrKbkDeiGY7L38YmGUZ1A6Wq1D3oXxbZX5QCvWCw4PUHZzP6oOz3wD6vYC+38PvDms31PxB1OwEDTe/E8oNz34cz76GzYZofwGd966VuB+SbqdDezGJz/zAj88DiuCi0w8D3E/8rVZ/0vB0R7MjvwK4ltsjw17Lx6WwpCPdp5qaHtbZdNe1qxqBUG+/HY1sF3qXWKpSbx9GQb57DAX9sQOo2WLee/T0an2T/e2frqjQoZENYjeCklmDQ2o15Hv8taMcH0L6fhD2Me6cUz0+vV6vE/e7PiJdnxASb43PK3G4sYnTlFMk9uZmCpH8PdTl+JjZqXEzr3tygqMc6trz//Po0RfWpZuJqjSY6a+tp1o2Kn+Z1YoVwEGjeyN6TPNvGvYb2fonH3D4D+MdAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">5f590875c3413210b0541c65e401316d</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <parent_ui_id>d29ad89f-99f0-4080-954b-00441bfff64d</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:13</sys_created_on>
+        <sys_id>d3590875c3413210b0541c65e401316e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:13</sys_updated_on>
+        <ui_id>8d2e3515-779f-4ff8-8d02-474982800153</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXW/aMBT9K5WfATkJoYS3qlWlSmyV1qovWxXd2A5YdezMdmgZ4r/vOh9QaVTd1D7uCXzu9b3nHHzEjpjG14139+bCObnSZPH9cUSkDhh+35FSmeelWUl2o50HzcTd1t1wsiDJ+XRezCjLkvmci4hmrDgvsoilrICIxgnBMaGPGc2ll0bnGiqBaPtxAt+AakLhQVhZSgahdmaezrDEpasVbB/e7qjB4hQvLFnsCFtLxa0YxAQWJYUyyljEkniWxJTG82lUzJIiinkCAgJbBYVQ2Ho5EDtbtsjbjP22DrjzVupVf172U+4G0FgeWEV0RMSLF5oL5FOCcmJEKtAcvLHbA2IF8FutjsBaao/jSGh+cfIXLozTNDSWAiUy0RUPx7z3qoPLK/CAVBrmG9u3srWRTLjOHC5KaJS/fI11Dbd1kNpd8VCo4bZRTaW/do6Qw4Dhp0GkcUhC1EFpoN7rKO/W5vnbwPJa6taVvqgMA3U4gUfvisYHPjsilKhwUF5BXaOjeW3NRraXkUs1WSk8TMIrxaXhBU+ABeITNBYm14hftfADWBlUfMExeLmjWYCTLG9fO45DmwTZj4jbuksFzh1Forv5zyZQ7CT34vLOn3CFWVn7C9y8Eb2O/egzw3PiFb6KzG6X0iJLKCvH5TRKxtOIwXg+F7OxYIhziGlW0Imw1tjKrfb7Hw2lCW8F/5Gujw17L4gZpGUa0fR0EKezU0E8Lf5f0he/k75A/i/DRyn9n74Pp0+6vMtMr61d/onhewzh6HYevGbSIbX7gN0Mf3ChsMXHFSJ6hJ6NfQqijtj+NxSJNDMqBwAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=4759c475c3413210b0541c65e40131f1^sys_idNOT IN27590875c3413210b0541c65e40131d3,2b590875c3413210b0541c65e40131d2,2f590875c3413210b0541c65e40131d1,63590875c3413210b0541c65e40131d3,67590875c3413210b0541c65e40131d2,6b590875c3413210b0541c65e40131d1,a3590875c3413210b0541c65e40131d2,ab590875c3413210b0541c65e40131d3,af590875c3413210b0541c65e40131d2,e7590875c3413210b0541c65e40131d3,eb590875c3413210b0541c65e40131d2,ef590875c3413210b0541c65e40131d1"/>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>4759c475c3413210b0541c65e40131f1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{50b930cf-f413-41ca-88e6-ecb93da209b0.file_count}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:14</sys_created_on>
+        <sys_id>27590875c3413210b0541c65e40131d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:14</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>b1bc98db-6441-45f9-823c-f152c67b9585</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>4759c475c3413210b0541c65e40131f1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{77e3bea4-f6f9-4634-955f-cdc188e8968e.var_row_sum}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:14</sys_created_on>
+        <sys_id>2b590875c3413210b0541c65e40131d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:14</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>ee855892-fa3e-4e7e-b978-e1a94a4f2f98</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>4759c475c3413210b0541c65e40131f1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Service Catalog_1.request_item.requested_for.first_name}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:14</sys_created_on>
+        <sys_id>2f590875c3413210b0541c65e40131d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:14</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>046e6adb-222b-4535-b352-31069398ef59</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>4759c475c3413210b0541c65e40131f1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{77e3bea4-f6f9-4634-955f-cdc188e8968e.var_row_sum}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:14</sys_created_on>
+        <sys_id>63590875c3413210b0541c65e40131d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:14</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>c4f21e0a-d8d0-46c7-aae2-321ae4341bae</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>4759c475c3413210b0541c65e40131f1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{4a517c22-29c2-46f0-a646-3dd627b4e725.Record.file_name}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:14</sys_created_on>
+        <sys_id>67590875c3413210b0541c65e40131d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:14</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>59619911-58f9-430b-b680-7f9d4c19c26d</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>4759c475c3413210b0541c65e40131f1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{50b930cf-f413-41ca-88e6-ecb93da209b0.expense_sum}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:14</sys_created_on>
+        <sys_id>6b590875c3413210b0541c65e40131d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:14</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>fcc2987c-df4a-4133-ba86-8ffe5d8741bb</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>4759c475c3413210b0541c65e40131f1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{4a517c22-29c2-46f0-a646-3dd627b4e725.Record.file_name}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:14</sys_created_on>
+        <sys_id>a3590875c3413210b0541c65e40131d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:14</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>76e57e43-6057-472f-8ec8-39c934cb1e82</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>4759c475c3413210b0541c65e40131f1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{Service Catalog_1.request_item.requested_for.first_name}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:14</sys_created_on>
+        <sys_id>ab590875c3413210b0541c65e40131d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:14</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>46691b75-a498-457b-9c54-11e9b2f3ad94</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>4759c475c3413210b0541c65e40131f1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{50b930cf-f413-41ca-88e6-ecb93da209b0.expense_sum}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:14</sys_created_on>
+        <sys_id>af590875c3413210b0541c65e40131d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:14</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>691dfc9f-c61e-42a9-ac1f-691f9aa48685</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>4759c475c3413210b0541c65e40131f1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{77e3bea4-f6f9-4634-955f-cdc188e8968e.var_row_count}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:14</sys_created_on>
+        <sys_id>e7590875c3413210b0541c65e40131d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:14</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>cc23bcf5-c9b1-48de-a614-aa93106f4282</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>4759c475c3413210b0541c65e40131f1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{77e3bea4-f6f9-4634-955f-cdc188e8968e.var_row_count}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:14</sys_created_on>
+        <sys_id>eb590875c3413210b0541c65e40131d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:14</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>6ee21c5c-5011-4ed0-8def-669acc6736ca</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>4759c475c3413210b0541c65e40131f1</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{50b930cf-f413-41ca-88e6-ecb93da209b0.file_count}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:14</sys_created_on>
+        <sys_id>ef590875c3413210b0541c65e40131d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:14</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>58e8ab96-8c7e-4d84-bde7-f5689884e918</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_flow_variable action="delete_multiple" query="model=4759c475c3413210b0541c65e40131f1^sys_idNOT IN57590875c3413210b0541c65e4013122,5f590875c3413210b0541c65e401310a,93590875c3413210b0541c65e4013111"/>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=bf75f153-9b3d-4454-89a3-40a4502a50c4</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>message_d_erreur</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>message_d_erreur</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</model>
+        <model_id>4759c475c3413210b0541c65e40131f1</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_4759c475c3413210b0541c65e40131f1</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:12</sys_created_on>
+        <sys_id>57590875c3413210b0541c65e4013122</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:12</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=1c96a599-b709-447f-8914-0224553a8f16</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>notifbpi</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>notifbpi</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</model>
+        <model_id>4759c475c3413210b0541c65e40131f1</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_4759c475c3413210b0541c65e40131f1</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:12</sys_created_on>
+        <sys_id>5f590875c3413210b0541c65e401310a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:12</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=0ebf5612-d9b0-4a11-949c-6cb887de36b2</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>script</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>script</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Data Automation  -  Import Expense Line (SPM))s">4759c475c3413210b0541c65e40131f1</model>
+        <model_id>4759c475c3413210b0541c65e40131f1</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_4759c475c3413210b0541c65e40131f1</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:12</sys_created_on>
+        <sys_id>93590875c3413210b0541c65e4013111</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:12</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>request_item</element>
+        <help/>
+        <hint/>
+        <label>Request Item</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_4759c475c3413210b0541c65e40131f1</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:12</sys_created_on>
+        <sys_id>17590875c3413210b0541c65e401314d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Import process" source="73c680bdc3013210b0541c65e4013136">73c680bdc3013210b0541c65e4013136</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:12</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_4759c475c3413210b0541c65e40131f1</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 21:14:12</sys_created_on>
+        <sys_id>17590875c3413210b0541c65e4013155</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Import process" source="73c680bdc3013210b0541c65e4013136">73c680bdc3013210b0541c65e4013136</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Import process">73c680bdc3013210b0541c65e4013136</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 21:14:12</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_4759c475c3413210b0541c65e40131f1"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_4759c475c3413210b0541c65e40131f1"/>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=4759c475c3413210b0541c65e40131f1"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=4759c475c3413210b0541c65e40131f1"/>
+</record_update>
